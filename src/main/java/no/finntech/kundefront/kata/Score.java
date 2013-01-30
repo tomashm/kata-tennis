@@ -1,5 +1,7 @@
 package no.finntech.kundefront.kata;
 
+import com.google.common.base.Objects;
+
 public class Score {
     private int server;
     private int receiver;
@@ -28,5 +30,13 @@ public class Score {
         int result = server;
         result = 31 * result + receiver;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("server", server)
+                .add("receiver", receiver)
+                .toString();
     }
 }

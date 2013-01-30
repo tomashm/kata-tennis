@@ -10,16 +10,16 @@ public class TennisTest {
     public void shouldStartWithWith_0_0_whenNewGame() {
         Game game = new Game();
 
-        Score expected = new Score(0, 0);
-        assertThat(game.getScore()).isEqualTo(expected);
+        assertThat(game.getScore()).isEqualTo(new Score(0, 0));
     }
 
     @Test
     public void shouldIncreaseScoreForWinnerOfBall() {
         Game game = new Game();
+
         game.registerBallWinner(Player.SERVER);
-        Score expected = new Score(15, 0);
-        assertThat(game.getScore()).isEqualTo(expected);
+
+        assertThat(game.getScore()).isEqualTo(new Score(15, 0));
     }
 
 }

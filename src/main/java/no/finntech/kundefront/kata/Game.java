@@ -1,12 +1,14 @@
 package no.finntech.kundefront.kata;
 
 public class Game {
+
+    private Score score = new Score(0, 0);
+
     public Score getScore() {
-        return new Score(0,0);
+        return score;
     }
 
     public void registerBallWinner(Player player) {
-
-        //To change body of created methods use File | Settings | File Templates.
+        score = new Score(15, 0);
     }
 }
