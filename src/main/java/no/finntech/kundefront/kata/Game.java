@@ -9,6 +9,12 @@ public class Game {
     }
 
     public void registerBallWinner(Player player) {
-        score = new Score(15, 0);
+        if (player == Player.RECEIVER) {
+            score = new Score(score.getFor(Player.SERVER), score.getFor(Player.RECEIVER) + 15);
+        } else {
+            score = new Score(score.getFor(Player.SERVER) + 15, score.getFor(Player.RECEIVER));
+
+        }
+
     }
 }

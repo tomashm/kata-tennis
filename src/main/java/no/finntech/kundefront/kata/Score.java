@@ -39,4 +39,12 @@ public class Score {
                 .add("receiver", receiver)
                 .toString();
     }
+
+    public int getFor(Player player) {
+        if (player == Player.SERVER) {
+            return server;
+        } else {
+            return receiver;
+        }
+    }
 }
