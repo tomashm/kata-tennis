@@ -13,4 +13,13 @@ public class TennisTest {
         Score expected = new Score(0, 0);
         assertThat(game.getScore()).isEqualTo(expected);
     }
+
+    @Test
+    public void shouldIncreaseScoreForWinnerOfBall() {
+        Game game = new Game();
+        game.registerBallWinner(Player.SERVER);
+        Score expected = new Score(15, 0);
+        assertThat(game.getScore()).isEqualTo(expected);
+    }
+
 }
