@@ -22,4 +22,15 @@ public class TennisTest {
         assertThat(game.getScore()).isEqualTo(new Score(15, 0));
     }
 
+    @Test
+    public void shouldRegisterMultipleBalls() {
+        Game game = new Game();
+
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+
+        assertThat(game.getScore()).isEqualTo(new Score(15, 15));
+
+    }
+
 }

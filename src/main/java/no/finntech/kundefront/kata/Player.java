@@ -8,7 +8,7 @@ package no.finntech.kundefront.kata;
  * To change this template use File | Settings | File Templates.
  */
 public enum Player {
-    SERVER
+    RECEIVER, SERVER
 
 
 }
