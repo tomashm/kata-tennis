@@ -33,4 +33,16 @@ public class TennisTest {
 
     }
 
+    @Test
+    public void shouldGetCorrectScoreWhenOnePlayerWins_3_balls() {
+        Game game = new Game();
+
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.SERVER);
+
+        assertThat(game.getScore()).isEqualTo(new Score(40, 0));
+
+    }
+
 }
