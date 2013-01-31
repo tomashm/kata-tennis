@@ -3,7 +3,7 @@ package no.finntech.kundefront.kata;
 import com.google.common.base.Objects;
 
 public class Score {
-    public static final Object DEUCE = new Object();
+    public static final Score DEUCE = new Score(40, 40);
     private int server;
     private int receiver;
 
