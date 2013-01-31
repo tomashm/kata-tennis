@@ -34,7 +34,7 @@ public class TennisTest {
     }
 
     @Test
-    public void shouldGetCorrectScoreWhenOnePlayerWins_3_balls() {
+    public void shouldScore_40_WhenOnePlayerWins_3_balls() {
         Game game = new Game();
 
         game.registerBallWinner(Player.SERVER);
@@ -44,4 +44,17 @@ public class TennisTest {
         assertThat(game.getScore()).isEqualTo(new Score(40, 0));
     }
 
+    @Test
+    public void shouldScoreDeuceWhenBothPlayerWins_3_balls() {
+        Game game = new Game();
+
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+
+        assertThat(game.getScore()).isEqualTo(Score.DEUCE);
+    }
 }
