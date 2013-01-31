@@ -74,4 +74,24 @@ public class TennisTest {
 
         assertThat(game.getScore()).isEqualTo(Score.DEUCE);
     }
+
+    @Test
+    public void shouldScoreAdvantageServerWhenServerWinsAfterDeuce() {
+        Game game = deuceGame();
+
+        game.registerBallWinner(Player.SERVER);
+
+        assertThat(game.getScore()).isEqualTo(new AdvantageScore(Player.SERVER));
+    }
+
+    private Game deuceGame() {
+        Game game = new Game();
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        return game;
+    }
 }
