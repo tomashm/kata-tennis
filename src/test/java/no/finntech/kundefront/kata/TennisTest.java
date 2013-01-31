@@ -57,4 +57,21 @@ public class TennisTest {
 
         assertThat(game.getScore()).isEqualTo(Score.DEUCE);
     }
+
+
+    @Test
+    public void shouldScoreDeuceWhenBothPlayerWins_4_balls() {
+        Game game = new Game();
+
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+        game.registerBallWinner(Player.SERVER);
+        game.registerBallWinner(Player.RECEIVER);
+
+        assertThat(game.getScore()).isEqualTo(Score.DEUCE);
+    }
 }
