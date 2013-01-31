@@ -10,11 +10,18 @@ public class Game {
 
     public void registerBallWinner(Player player) {
         if (player == Player.RECEIVER) {
-            score = new Score(score.getFor(Player.SERVER), score.getFor(Player.RECEIVER) + 15);
+            score = new Score(score.getFor(Player.SERVER), incrementScore(score.getFor(Player.RECEIVER)));
         } else {
-            score = new Score(score.getFor(Player.SERVER) + 15, score.getFor(Player.RECEIVER));
+            score = new Score(incrementScore(score.getFor(Player.SERVER)), score.getFor(Player.RECEIVER));
 
         }
 
+    }
+
+    private int incrementScore(int current) {
+        if (current == 30) {
+            return current + 10;
+        }
+        return current + 15;
     }
 }

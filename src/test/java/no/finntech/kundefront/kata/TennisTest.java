@@ -42,7 +42,6 @@ public class TennisTest {
         game.registerBallWinner(Player.SERVER);
 
         assertThat(game.getScore()).isEqualTo(new Score(40, 0));
-
     }
 
 }
