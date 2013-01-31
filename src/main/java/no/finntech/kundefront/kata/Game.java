@@ -19,9 +19,11 @@ public class Game {
     }
 
     private int incrementScore(int current) {
-        if (current == 30) {
+        if (current <= 15) {
+            return current + 15;
+        } else if (current == 30) {
             return current + 10;
         }
-        return current + 15;
+        return current;
     }
 }
