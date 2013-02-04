@@ -1,4 +1,4 @@
-This is an implementation of [codingdojo.org/cgi-bin/wiki.pl?KataTennis][]
+This is an implementation of [KataTennis](codingdojo.org/cgi-bin/wiki.pl?KataTennis)
 
 
 
