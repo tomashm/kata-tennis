@@ -2,6 +2,9 @@ package no.finntech.kundefront.kata;
 
 import com.google.common.base.Objects;
 
+import static no.finntech.kundefront.kata.Player.RECEIVER;
+import static no.finntech.kundefront.kata.Player.SERVER;
+
 public class PointScore implements Score {
     private int server;
     private int receiver;
@@ -13,11 +16,11 @@ public class PointScore implements Score {
     }
 
     public Score registerBallWinner(Player player) {
-        if (player == Player.SERVER && server == 40 && receiver < 40) {
-            return new Winner(Player.SERVER);
+        if (player == SERVER && server == 40 && receiver < 40) {
+            return new Winner(SERVER);
         }
-        if (player == Player.RECEIVER && server < 40 && receiver == 40) {
-            return new Winner(Player.RECEIVER);
+        if (player == RECEIVER && server < 40 && receiver == 40) {
+            return new Winner(RECEIVER);
         }
         Score score = calculateScore(player);
         if (score.equals(new PointScore(40, 40))) {
@@ -27,10 +30,10 @@ public class PointScore implements Score {
     }
 
     private Score calculateScore(Player player) {
-        if (player == Player.RECEIVER) {
-            return new PointScore(this.getFor(Player.SERVER), incrementScore(this.getFor(Player.RECEIVER)));
+        if (player == RECEIVER) {
+            return new PointScore(this.getFor(SERVER), incrementScore(this.getFor(RECEIVER)));
         } else {
-            return new PointScore(incrementScore(this.getFor(Player.SERVER)), this.getFor(Player.RECEIVER));
+            return new PointScore(incrementScore(this.getFor(SERVER)), this.getFor(RECEIVER));
         }
     }
 
@@ -74,7 +77,7 @@ public class PointScore implements Score {
     }
 
     public int getFor(Player player) {
-        if (player == Player.SERVER) {
+        if (player == SERVER) {
             return server;
         } else {
             return receiver;
