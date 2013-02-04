@@ -2,12 +2,12 @@ package no.finntech.kundefront.kata;
 
 import com.google.common.base.Objects;
 
-public class AdvantageScore implements Score {
+public class Advantage implements Score {
 
 
     private final Player player;
 
-    public AdvantageScore(Player player) {
+    public Advantage(Player player) {
 
         this.player = player;
     }
@@ -30,7 +30,7 @@ public class AdvantageScore implements Score {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdvantageScore that = (AdvantageScore) o;
+        Advantage that = (Advantage) o;
 
         return player == that.player;
 

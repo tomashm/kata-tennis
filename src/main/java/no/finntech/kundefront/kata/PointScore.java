@@ -21,7 +21,7 @@ public class PointScore implements Score {
         }
         Score score = calculateScore(player);
         if (score.equals(new PointScore(40, 40))) {
-            return new DeuceScore();
+            return new Deuce();
         }
         return score;
     }

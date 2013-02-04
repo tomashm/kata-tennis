@@ -55,7 +55,7 @@ public class TennisTest {
         game.registerBallWinner(Player.SERVER);
         game.registerBallWinner(Player.RECEIVER);
 
-        assertThat(game.getScore()).isEqualTo(new DeuceScore());
+        assertThat(game.getScore()).isEqualTo(new Deuce());
     }
 
 
@@ -72,7 +72,7 @@ public class TennisTest {
         game.registerBallWinner(Player.SERVER);
         game.registerBallWinner(Player.RECEIVER);
 
-        assertThat(game.getScore()).isEqualTo(new DeuceScore());
+        assertThat(game.getScore()).isEqualTo(new Deuce());
     }
 
     @Test

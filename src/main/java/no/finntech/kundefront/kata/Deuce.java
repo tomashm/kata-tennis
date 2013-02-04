@@ -1,6 +1,8 @@
 package no.finntech.kundefront.kata;
 
-public class DeuceScore implements Score {
+import com.google.common.base.Objects;
+
+public class Deuce implements Score {
 
     @Override
     public Score registerBallWinner(Player player) {
@@ -14,6 +16,11 @@ public class DeuceScore implements Score {
     @Override
     public boolean equals(Object obj) {
 
-        return obj instanceof DeuceScore;
+        return obj instanceof Deuce;
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).toString();
     }
 }
