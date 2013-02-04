@@ -5,15 +5,18 @@ import com.google.common.base.Objects;
 public class Advantage implements Score {
 
 
-    private final Player player;
+    private final Player playerWithAdvantage;
 
-    public Advantage(Player player) {
+    public Advantage(Player playerWithAdvantage) {
 
-        this.player = player;
+        this.playerWithAdvantage = playerWithAdvantage;
     }
 
     @Override
     public Score registerBallWinner(Player player) {
+        if (player.equals(playerWithAdvantage)) {
+            return new Winner(playerWithAdvantage);
+        }
         return new Deuce();
 
     }
@@ -21,7 +24,7 @@ public class Advantage implements Score {
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
-                .add("player", player)
+                .add("player", playerWithAdvantage)
                 .toString();
     }
 
@@ -32,12 +35,12 @@ public class Advantage implements Score {
 
         Advantage that = (Advantage) o;
 
-        return player == that.player;
+        return playerWithAdvantage == that.playerWithAdvantage;
 
     }
 
     @Override
     public int hashCode() {
-        return player != null ? player.hashCode() : 0;
+        return playerWithAdvantage != null ? playerWithAdvantage.hashCode() : 0;
     }
 }
