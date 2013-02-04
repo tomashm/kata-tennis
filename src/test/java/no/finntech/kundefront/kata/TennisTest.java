@@ -93,7 +93,7 @@ public class TennisTest {
 
         game.registerBallWinner(Player.RECEIVER);
 
-        assertThat(game.getScore()).isEqualTo(new AdvantageScore(Player.RECEIVER));
+        assertThat(game.getScore()).isEqualTo(new Advantage(Player.RECEIVER));
     }
 
     @Test

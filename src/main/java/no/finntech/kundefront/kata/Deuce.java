@@ -6,7 +6,7 @@ public class Deuce implements Score {
 
     @Override
     public Score registerBallWinner(Player player) {
-        return new AdvantageScore(player);
+        return new Advantage(player);
     }
 
     public int hashCode() {
