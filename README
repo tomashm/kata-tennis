@@ -6,10 +6,11 @@ same player wins 2 balls                rr			30 - 0
 same player wins 3 balls                sss			40 - 0
 same player wins 4 balls - game ends    rrrr		0  - 40	r
 both players win balls                  srss		40 - 15
-? deuce                                 srsrsrsr	d  - d
-? advantage                             srsrsrsrs	a  - ?
-? game ends after advantage             srsrsrsrss	?  - a	s
-? deuce after advantage                 srsrsrsrsa	d  - d
+deuce 8 balls                           srsrsrsr	d
+deuce 10 balls                          srsrsrsrsr	d
+advantage                               srsrsrsrr	a r
+game ends after advantage               srsrsrsrss	a s 	s
+deuce after advantage                   srsrsrsrsa	d
 
 
 Abrevations
