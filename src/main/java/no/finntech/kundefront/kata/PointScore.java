@@ -3,7 +3,6 @@ package no.finntech.kundefront.kata;
 import com.google.common.base.Objects;
 
 public class PointScore implements Score {
-    public static final Score DEUCE = new DeuceScore();
     private int server;
     private int receiver;
 
@@ -14,14 +13,9 @@ public class PointScore implements Score {
     }
 
     public Score registerBallWinner(Player player) {
-        if (this.equals(DEUCE)) {
-            return new AdvantageScore(player);
-        }
-
-
         Score score = calculateScore(player);
         if (score.equals(new PointScore(40,40))) {
-            return DEUCE;
+            return new DeuceScore();
         }
         return score;
     }
@@ -45,6 +39,7 @@ public class PointScore implements Score {
 
 
 
+    @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

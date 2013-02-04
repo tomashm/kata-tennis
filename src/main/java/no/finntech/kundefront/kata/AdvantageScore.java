@@ -32,9 +32,8 @@ public class AdvantageScore implements Score {
 
         AdvantageScore that = (AdvantageScore) o;
 
-        if (player != that.player) return false;
+        return player == that.player;
 
-        return true;
     }
 
     @Override
