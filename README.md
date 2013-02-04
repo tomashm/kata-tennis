@@ -20,7 +20,6 @@ Alternative specification
 | deuce after advantage                   | srsrsrsrsa	| deuce         |
 
 
-Abrevations
------------
+#### Abrevations
 s = server
 r = receiver
