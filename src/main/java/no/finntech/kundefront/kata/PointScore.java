@@ -13,6 +13,12 @@ public class PointScore implements Score {
     }
 
     public Score registerBallWinner(Player player) {
+        if (player == Player.SERVER && server == 40 && receiver < 40) {
+            return new Winner(Player.SERVER);
+        }
+        if (player == Player.RECEIVER && server < 40 && receiver == 40) {
+            return new Winner(Player.RECEIVER);
+        }
         Score score = calculateScore(player);
         if (score.equals(new PointScore(40, 40))) {
             return new DeuceScore();
