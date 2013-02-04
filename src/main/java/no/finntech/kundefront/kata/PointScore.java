@@ -14,7 +14,7 @@ public class PointScore implements Score {
 
     public Score registerBallWinner(Player player) {
         Score score = calculateScore(player);
-        if (score.equals(new PointScore(40,40))) {
+        if (score.equals(new PointScore(40, 40))) {
             return new DeuceScore();
         }
         return score;
@@ -29,14 +29,13 @@ public class PointScore implements Score {
     }
 
     private int incrementScore(int current) {
-            if (current <= 15) {
-                return current + 15;
-            } else if (current == 30) {
-                return current + 10;
-            }
-            return current;
+        if (current <= 15) {
+            return current + 15;
+        } else if (current == 30) {
+            return current + 10;
         }
-
+        return current;
+    }
 
 
     @SuppressWarnings("all")
