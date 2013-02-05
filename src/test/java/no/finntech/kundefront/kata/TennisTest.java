@@ -12,6 +12,7 @@ public class TennisTest {
     public void shouldStartWithWith_0_0_whenNewGame() {
         Game game = new Game();
 
+        assertThat(game.getScore()).isEqualTo(new PointScore());
         assertThat(game.getScore()).isEqualTo(new PointScore(0, 0));
     }
 

@@ -6,11 +6,15 @@ import static no.finntech.kundefront.kata.Player.RECEIVER;
 import static no.finntech.kundefront.kata.Player.SERVER;
 
 public class PointScore implements Score {
-    private int server;
-    private int receiver;
+    private final int server;
+    private final int receiver;
 
-    public PointScore(int server, int receiver) {
+    public PointScore() {
+        this(0, 0);
+    }
 
+    /** Only for test usage */
+    PointScore(int server, int receiver) {
         this.server = server;
         this.receiver = receiver;
     }
@@ -31,21 +35,23 @@ public class PointScore implements Score {
 
     private Score calculateScore(Player player) {
         if (player == RECEIVER) {
-            return new PointScore(this.getFor(SERVER), incrementScore(this.getFor(RECEIVER)));
+            return new PointScore(points(SERVER), incrementScore(points(RECEIVER)));
         } else {
-            return new PointScore(incrementScore(this.getFor(SERVER)), this.getFor(RECEIVER));
+            return new PointScore(incrementScore(points(SERVER)), points(RECEIVER));
         }
     }
 
     private int incrementScore(int current) {
-        if (current <= 15) {
-            return current + 15;
-        } else if (current == 30) {
-            return current + 10;
+        switch (current) {
+            case 0: return 15;
+            case 15: return 30;
+            default: return 40;
         }
-        return current;
     }
 
+    public int points(Player player) {
+        return player == SERVER ? server : receiver;
+    }
 
     @SuppressWarnings("all")
     @Override
@@ -74,13 +80,5 @@ public class PointScore implements Score {
                 .add("server", server)
                 .add("receiver", receiver)
                 .toString();
-    }
-
-    public int getFor(Player player) {
-        if (player == SERVER) {
-            return server;
-        } else {
-            return receiver;
-        }
     }
 }
