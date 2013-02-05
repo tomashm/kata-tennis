@@ -3,10 +3,10 @@ package no.finntech.kundefront.kata;
 import com.google.common.base.Objects;
 
 public class Winner implements Score {
-    private Player player;
+    private Player winner;
 
     public Winner(Player player) {
-        this.player = player;
+        this.winner = player;
     }
 
     @Override
@@ -14,28 +14,19 @@ public class Winner implements Score {
         throw new IllegalStateException("Game finished");
     }
 
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this)
-                .add("player", player)
-                .toString();
-    }
-
     @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Winner winner = (Winner) o;
-
-        if (player != winner.player) return false;
-
-        return true;
+        return Objects.equal(this, o);
     }
 
     @Override
     public int hashCode() {
-        return player != null ? player.hashCode() : 0;
+        return Objects.hashCode(winner);
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).add("player", winner).toString();
     }
 }

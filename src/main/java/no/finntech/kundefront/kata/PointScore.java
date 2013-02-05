@@ -56,22 +56,12 @@ public class PointScore implements Score {
     @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        PointScore pointScore = (PointScore) o;
-
-        if (receiver != pointScore.receiver) return false;
-        if (server != pointScore.server) return false;
-
-        return true;
+        return Objects.equal(this, o);
     }
 
     @Override
     public int hashCode() {
-        int result = server;
-        result = 31 * result + receiver;
-        return result;
+        return Objects.hashCode(server, receiver);
     }
 
     @Override

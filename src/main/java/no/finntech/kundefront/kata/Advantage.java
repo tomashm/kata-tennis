@@ -21,26 +21,19 @@ public class Advantage implements Score {
 
     }
 
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this)
-                .add("player", playerWithAdvantage)
-                .toString();
-    }
-
+    @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Advantage that = (Advantage) o;
-
-        return playerWithAdvantage == that.playerWithAdvantage;
-
+        return Objects.equal(this, o);
     }
 
     @Override
     public int hashCode() {
-        return playerWithAdvantage != null ? playerWithAdvantage.hashCode() : 0;
+        return Objects.hashCode(playerWithAdvantage);
+    }
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).add("playerWithAdvantage", playerWithAdvantage).toString();
     }
 }

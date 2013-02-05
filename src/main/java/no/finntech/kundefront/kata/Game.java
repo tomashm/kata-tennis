@@ -1,7 +1,6 @@
 package no.finntech.kundefront.kata;
 
 public class Game {
-
     private Score score = new PointScore();
 
     public Score getScore() {
@@ -10,9 +9,5 @@ public class Game {
 
     public void registerBallWinner(Player player) {
         score = score.registerBallWinner(player);
-
-
     }
-
-
 }

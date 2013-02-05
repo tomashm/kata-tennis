@@ -15,7 +15,6 @@ public class Deuce implements Score {
 
     @Override
     public boolean equals(Object obj) {
-
         return obj instanceof Deuce;
     }
 
