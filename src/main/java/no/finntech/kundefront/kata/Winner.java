@@ -14,12 +14,23 @@ public class Winner implements Score {
         throw new IllegalStateException("Game finished");
     }
 
+    @Override
+    public boolean isDone() {
+        return true;
+    }
+
     @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        return Objects.equal(this, o);
+        if (this == o) {
+            return true;
+        }
+        if (!getClass().equals(o.getClass())) {
+            return false;
+        }
+        Winner that = (Winner) o;
+        return Objects.equal(this.winner, that.winner);
     }
-
     @Override
     public int hashCode() {
         return Objects.hashCode(winner);

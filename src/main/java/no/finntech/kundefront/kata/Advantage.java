@@ -21,10 +21,22 @@ public class Advantage implements Score {
 
     }
 
+    @Override
+    public boolean isDone() {
+        return false;
+    }
+
     @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        return Objects.equal(this, o);
+        if (this == o) {
+            return true;
+        }
+        if (!getClass().equals(o.getClass())) {
+            return false;
+        }
+        Advantage that = (Advantage) o;
+        return Objects.equal(this.playerWithAdvantage, that.playerWithAdvantage);
     }
 
     @Override

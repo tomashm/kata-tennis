@@ -33,6 +33,11 @@ public class PointScore implements Score {
         return score;
     }
 
+    @Override
+    public boolean isDone() {
+        return false;
+    }
+
     private Score calculateScore(Player player) {
         if (player == RECEIVER) {
             return new PointScore(points(SERVER), incrementScore(points(RECEIVER)));
@@ -56,7 +61,15 @@ public class PointScore implements Score {
     @SuppressWarnings("all")
     @Override
     public boolean equals(Object o) {
-        return Objects.equal(this, o);
+        if (this == o) {
+          return true;
+        }
+        if (!getClass().equals(o.getClass())) {
+          return false;
+        }
+        PointScore that = (PointScore) o;
+        return Objects.equal(this.server, that.server) &&
+                        Objects.equal(this.receiver, that.receiver);
     }
 
     @Override

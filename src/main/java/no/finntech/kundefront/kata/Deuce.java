@@ -9,6 +9,11 @@ public class Deuce implements Score {
         return new Advantage(player);
     }
 
+    @Override
+    public boolean isDone() {
+        return false;
+    }
+
     public int hashCode() {
         return 42;
     }

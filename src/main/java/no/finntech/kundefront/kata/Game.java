@@ -10,4 +10,8 @@ public class Game {
     public void registerBallWinner(Player player) {
         score = score.registerBallWinner(player);
     }
+
+    public boolean isDone() {
+        return score.isDone();
+    }
 }
