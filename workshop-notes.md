@@ -38,6 +38,15 @@ It is normal to solve the same problem several times, but changing how you solve
 Beskrivelse av Metodikk
 Ping pong TDD
 
+TDD and "Ping pong"
+Write a test for a new function. The test should fail.
+Switch "driver" in the pair
+Write code until the test passes.
+Refactor until the code is suitable for continued development
+Goto 1.
+"Baby steps"
+The next step to take should always be as small as possible. Yes, as small as possible.
+
 ## Inndeling i grupper (3 min)
 
 Ricaro/Christian - Shahid/Tommy
@@ -52,7 +61,9 @@ Bytte gruppe underveis? Ricardo/Shahid - Christian/Tommy
 ## Gjennomgang av løsninger (10 min Henning)
 
 ## Oppsummering/Retro (10 min Tomas)
-Har vi lært noe? Hva?
+What, if anything, did you learn today?
+What, if anything, surprised you today?
+What, if anything, will you do differently in the future?
 
 ## Pluss/delta (5 min Tomas)
 Fagfredag/Kata. God ide? Hva kan forbedres etc.
